@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated manuscript."
+title: "Parmotrema perforatum population genomics analysis scripts"
+type: software
+authors:
+  - family-names: "Widhelm"
+    given-names: "Todd"
+repository-code: "https://github.com/twidhelm/Parmotrema-perforatum-popgen"
+url: "https://github.com/twidhelm/Parmotrema-perforatum-popgen"
+version: "v1.0-manuscript"
+date-released: 2026-09-11
+license: MIT
+abstract: >-
+  Analysis scripts, parameter files, metadata, and provenance records
+  associated with population-genomic analyses of the Parmotrema perforatum
+  group.
+keywords:
+  - RADseq
+  - population genomics
+  - lichens
+  - Parmotrema
+  - phylogenomics
