@@ -181,11 +181,9 @@ These files are preserved unchanged and therefore contain the original server pa
 
 ## Data availability
 
-Raw Illumina reads are available in the NCBI Sequence Read Archive (SRA) under BioProject accession **PRJNA1527490** and SRA Study accession **SRP735742**. Individual BioSample and SRA Run accessions are provided in Supplementary Table S2.
+Raw Illumina reads are available in the NCBI Sequence Read Archive (SRA) under BioProject accession PRJNA1527490 and SRA Study accession SRP735742. Individual BioSample and SRA Run accessions are provided in Supplementary Table S2.
 
-Phylogenetic alignment and tree files are being deposited in TreeBASE.
-
-Repository accession numbers and permanent links will be added after deposition is complete.
+Phylogenetic alignments and corresponding maximum-likelihood trees are deposited in Dryad under DOI 10.5061/dryad.qjq2bvqxv.
 
 ## Citation
 
