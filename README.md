@@ -22,7 +22,8 @@ Raw sequencing reads and large phylogenetic alignment files are archived separat
 │   └── filter_MIN85_ingroup_site80.sh
 ├── PCA/
 │   ├── PPG_PCA_Xtar_reduced_ingroup_MAF05_all_loci.R
-│   └── PPG_PCA_MIN85_site80.R
+│   ├── PPG_PCA_MIN85_site80.R
+│   └── PPG_PCA_MIN85_site80_lowmissing_strict.R
 ├── DAPC/
 │   ├── PPG_DAPC_Xtar_reduced_ingroup_MAF05.R
 │   └── PPG_DAPC_MIN85_site80.R
@@ -155,7 +156,10 @@ The repository now includes:
   original PCA workflow targeting the MIN85 filtered VCF;
 - `DAPC/PPG_DAPC_MIN85_site80.R` — a **portable adaptation** of
   the original DAPC workflow for MIN85, with the upper PC bound
-  explicitly inclusive.
+  explicitly inclusive;
+- `PCA/PPG_PCA_MIN85_site80_lowmissing_strict.R` — portable implementation
+  of the 85-individual PCA robustness check, with SNP-site missingness
+  re-filtered after removing individuals.
 
 To run the archived portable scripts:
 
@@ -164,12 +168,12 @@ export PPG_DATA_DIR=/path/to/PPG
 bash filtering/filter_MIN85_ingroup_site80.sh
 Rscript PCA/PPG_PCA_MIN85_site80.R
 Rscript DAPC/PPG_DAPC_MIN85_site80.R
+Rscript PCA/PPG_PCA_MIN85_site80_lowmissing_strict.R
 ```
 
 **Provenance / files still to archive:** The exact
-`params-MIN85_Xtar_reduced.txt` from Phoebe and the final
-85-individual strict PCA script have **not yet been imported** into
-this branch. Do not treat the portable script adaptations as
+`params-MIN85_Xtar_reduced.txt` from Phoebe has **not yet been imported**
+into this branch. Do not treat the portable script adaptations as
 byte-for-byte copies of the original server scripts. The original
 Step 7 MIN85 parameter file must be collected from the computing
 server; in particular, its assembly name and `min_samples_locus=85`
