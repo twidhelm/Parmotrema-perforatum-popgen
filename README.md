@@ -15,8 +15,8 @@ Raw sequencing reads and large phylogenetic alignment files are archived separat
 ├── ipyrad/
 │   ├── params-MIN4_Xtar_reduced.txt
 │   ├── params-MIN27_Xtar_reduced.txt
-│   └── params-MIN53_Xtar_reduced.txt
-│   (MIN85 parameter file to be added from original Phoebe run)
+│   ├── params-MIN53_Xtar_reduced.txt
+│   └── params-MIN85_Xtar_reduced.txt
 ├── filtering/
 │   ├── filter_Xtar_ingroup_MAF05.R
 │   └── filter_MIN85_ingroup_site80.sh
@@ -27,6 +27,8 @@ Raw sequencing reads and large phylogenetic alignment files are archived separat
 ├── DAPC/
 │   ├── PPG_DAPC_Xtar_reduced_ingroup_MAF05.R
 │   └── PPG_DAPC_MIN85_site80.R
+├── provenance/
+│   └── phoebe/ (exact source scripts and checksum manifest)
 ├── fineRADstructure/
 │   ├── run_finerad_all.sh
 │   └── plot_MIN53_finerad_species_symbols_no_cairo_BIG_symbols.R
@@ -171,14 +173,21 @@ Rscript DAPC/PPG_DAPC_MIN85_site80.R
 Rscript PCA/PPG_PCA_MIN85_site80_lowmissing_strict.R
 ```
 
-**Provenance / files still to archive:** The exact
-`params-MIN85_Xtar_reduced.txt` from Phoebe has **not yet been imported**
-into this branch. Do not treat the portable script adaptations as
-byte-for-byte copies of the original server scripts. The original
-Step 7 MIN85 parameter file must be collected from the computing
-server; in particular, its assembly name and `min_samples_locus=85`
-have been confirmed. Do not run Step 7 using an assumed copy of a
-different parameter file without checking it.
+**Original Phoebe sources are archived and SHA-verified.**
+The exact `ipyrad/params-MIN85_Xtar_reduced.txt` and five original
+server-side R scripts, including both low-missingness PCA versions,
+are preserved under `provenance/phoebe/`. See the
+[source checksum manifest](provenance/phoebe/README.md). The original
+parameter file records ipyrad v0.9.102 and `min_samples_locus=85`.
+
+Scripts under `PCA/`, `DAPC/`, and `filtering/` are **portable
+adaptations**, whereas those under `provenance/phoebe/` are the exact
+files from the author's archive. The original ingroup filter R script
+did not include MIN85; the VCFtools filtering commands for MIN85 are
+documented by `filtering/filter_MIN85_ingroup_site80.sh`.
+Reproducing the analyses still requires the original input VCFs,
+compatible R packages, and sample metadata. The scripts have not
+been re-executed in the GitHub environment.
 
 ## fineRADstructure
 
